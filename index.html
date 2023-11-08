@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promise and callback</title>
+</head>
+<body>	
+<script>
+// promise 
+let result=new Promise ((resolve,reject)=>{
+	let coin=prompt("given");
+	
+	if(coin=="head"){
+		resolve("success");
+	}
+	
+	else if(coin=="tail"){
+		reject("failure");
+	}
+	
+})
+
+	result.then((val)=>{
+		console.log(val);
+	})
+	result.catch((err)=>{
+		console.log(err);
+	}) 
+
+// callback
+	
+	// sum
+let w,x,y,z;
+function output(x1,x2,call){
+	let value=x1+x2;
+	call(value)
+}
+output (30,60,sum=>{
+	n1=sum;
+	console.log(w);
+
+output (n1,30,sum=>{
+	n2=sum;
+	console.log(x);
+
+output (n2,30,sum=>{
+	n3=sum;
+	console.log(y);
+
+output (n3,30,sum=>{
+	n4=sum;
+	console.log(z);
+	})
+})
+})
+})
+
+	// divide
+	let v1,v2,v3;
+	function operation(num1,num2,cb){
+		let fun=num1/num2;
+		cb(fun)
+	}
+	operation (1000,100,divide=>{
+		v1=divide;
+		console.log(v1);
+
+		operation (v1,3,divide=>{
+		v2=divide;
+		console.log(v2);
+
+		operation (v2,20,divide=>{
+		v3=divide;
+		console.log(v3);
+
+			
+		})
+	})
+	})
+</script>
+</body>
+</html>
